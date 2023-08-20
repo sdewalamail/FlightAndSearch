@@ -4,20 +4,17 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: "airbnb-base",
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script",
-      },
-    },
+  extends: [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "airbnb-base",
   ],
   parserOptions: {
     ecmaVersion: "latest",
   },
-  rules: {},
+  rules: {
+    "quotes": ["error", "double", { "allowSingleQuotes": true }],
+    // You can add or override other rules here as needed
+  },
 };
