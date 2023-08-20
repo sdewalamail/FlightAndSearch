@@ -77,7 +77,6 @@ exports.get = async (req, res) => {
 
 exports.getAllAirport = async (req, res) => {
     try {
-        console.log(":::::::::::::;");
         const airport = await airportService.getAllAirport(req.query);
         return res.status(201).json({
             data: airport,

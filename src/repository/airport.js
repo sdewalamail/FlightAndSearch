@@ -18,9 +18,9 @@ class AirportRepositry {
         }
 
     };
-    async createAirport({ name }) {
+    async createAirport(data) {
         try {
-            const airport = await Airport.create({ name });
+            const airport = await Airport.create(data);
             return airport;
         } catch (error) {
             console.log(`Error comes form airport repositry`);

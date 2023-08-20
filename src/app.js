@@ -1,17 +1,21 @@
 const express = require('express');
 
 const { PORT } = require('./config/serverCofig');
-const ApiRoutes = require("./routes");
 const { sequelize } = require('./models');
 
+const ApiRoutes = require("./routes");
+const requestLogger = require('./middlewares/request.loger');
 
 const setUPAndServerStart = () => {
     const app = express();
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+    app.use(requestLogger);
+
 
     app.use("/api", ApiRoutes);
+
 
     sequelize
         .authenticate()
