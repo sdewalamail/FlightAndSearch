@@ -4,7 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "eslint": "npx eslint .",
+    "format": "prettier --write \"**/*.js\"",
+    "pre-commit": "npm run eslint && npm run format"
   },
   "author": "raushan",
   "license": "MIT",
@@ -15,5 +18,12 @@
     "nodemon": "^3.0.1",
     "sequelize": "^6.32.1",
     "sequelize-cli": "^6.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.2"
   }
 }

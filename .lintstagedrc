@@ -1,0 +1,3 @@
+{
+  "*.js": ["npm run eslint", "npm run format", "git add"]
+}
